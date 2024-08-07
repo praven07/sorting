@@ -15,7 +15,7 @@ public class Main {
 
         System.out.println(Arrays.toString(values));
 
-        SelectionSort.sort(values);
+        InsertionSort.sort(values);
 
         System.out.println(Arrays.toString(values));
     }
