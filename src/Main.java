@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Integer[] values = new Integer[10];
+        Integer[] values = new Integer[9];
 
         for (int i = 0; i < values.length; i++) {
             values[i] = Main.rg.nextInt(1, 100);
@@ -15,7 +15,7 @@ public class Main {
 
         System.out.println(Arrays.toString(values));
 
-        InsertionSort.sort(values);
+        MergeSort.sort(values);
 
         System.out.println(Arrays.toString(values));
     }
