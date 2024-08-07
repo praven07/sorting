@@ -15,7 +15,7 @@ public class Main {
 
         System.out.println(Arrays.toString(values));
 
-        MergeSort.sort(values);
+        MergeSortBottomUp.sort(values);
 
         System.out.println(Arrays.toString(values));
     }
