@@ -22,19 +22,19 @@ public class QuickSort {
 
     private static int partition(Comparable[] items, int lo, int hi) {
 
-        int i = lo + 1;
-        int j = hi;
+        int i = lo;
+        int j = hi + 1;
 
         Comparable partition = items[lo];
 
         while (true) {
 
-            while (less(items[i], partition) && i < hi) {
-                i++;
+            while (less(items[++i], partition)) {
+                if (i == hi) break;
             }
 
-            while (less(partition, items[j]) && j > lo) {
-                j--;
+            while (less(partition, items[--j])) {
+                if (j == lo) break;
             }
 
             if (i >= j) {
@@ -86,11 +86,9 @@ public class QuickSort {
 
     public static void main(String[] args) {
 
-        Integer[] items = new Integer[100];
+        Integer[] items = {8, 2, 2, 9, 3, 2, 5, 9, 4, 1};
 
-        for (int i = 0; i < items.length; i++) {
-            items[i] = rg.nextInt();
-        }
+        System.out.println(Arrays.toString(items));
 
         sort(items);
 
