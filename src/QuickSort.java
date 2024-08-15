@@ -14,9 +14,7 @@ public class QuickSort {
 
     private static void sort(Comparable[] items, int lo, int hi) {
 
-        if (hi <= lo) {
-            return;
-        } else {
+        if (hi > lo) {
             int j = partition(items, lo, hi);
             sort(items, lo, j - 1);
             sort(items, j + 1, hi);
