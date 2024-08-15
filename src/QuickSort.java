@@ -1,5 +1,3 @@
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.random.RandomGenerator;
 
 public class QuickSort {
@@ -87,7 +85,7 @@ public class QuickSort {
 
     public static void main(String[] args) {
 
-        Integer[] items = new Integer[200];
+        Integer[] items = new Integer[100000];
 
         for (int i = 0; i < items.length; i++) {
             items[i] = rg.nextInt();
@@ -101,6 +99,6 @@ public class QuickSort {
             System.out.println("Items are sorted");
         }
 
-        System.out.println(Arrays.toString(items));
+//        System.out.println(Arrays.toString(items));
     }
 }
