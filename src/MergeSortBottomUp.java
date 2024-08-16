@@ -1,4 +1,4 @@
-public class MergeSortBottomUp {
+public class MergeSortBottomUp extends Sort {
 
     public static void sort(Comparable[] items) {
 
@@ -16,10 +16,6 @@ public class MergeSortBottomUp {
         }
 
         assert isSorted(items);
-    }
-
-    private static boolean less(Comparable a, Comparable b) {
-        return a.compareTo(b) < 0;
     }
 
     private static void merge(Comparable[] items, Comparable[] aux, int low, int mid, int high) {
@@ -43,20 +39,5 @@ public class MergeSortBottomUp {
                 items[k] = aux[j++];
             }
         }
-    }
-
-    private static boolean isSorted(Comparable[] items) {
-
-        if (items.length <= 1) {
-            return true;
-        }
-
-        for (int i = 1; i < items.length; i++) {
-            if (less(items[i], items[i - 1])) {
-                return false;
-            }
-        }
-
-        return true;
     }
 }

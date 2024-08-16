@@ -1,4 +1,4 @@
-public class SelectionSort {
+public class SelectionSort extends Sort {
 
     public static void sort(Comparable[] items) {
 
@@ -14,15 +14,7 @@ public class SelectionSort {
 
            swap(items, i, min);
         }
-    }
 
-    private static boolean less(Comparable a, Comparable b) {
-        return a.compareTo(b) < 0;
-    }
-
-    private static void swap(Comparable[] items, int i, int j) {
-        Comparable temp = items[i];
-        items[i] = items[j];
-        items[j] = temp;
+        assert isSorted(items);
     }
 }

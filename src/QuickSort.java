@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.random.RandomGenerator;
 
-public class QuickSort {
+public class QuickSort extends Sort {
 
     private static final RandomGenerator rg = RandomGenerator.getDefault();
 
@@ -9,6 +9,8 @@ public class QuickSort {
 
         shuffle(items);
         sort(items, 0, items.length - 1);
+
+        assert isSorted(items);
     }
 
     private static void sort(Comparable[] items, int lo, int hi) {
@@ -56,32 +58,6 @@ public class QuickSort {
             int j = rg.nextInt(i, items.length);
             swap(items, i, j);
         }
-    }
-
-    private static void swap(Comparable[] items, int i, int j) {
-
-        Comparable temp = items[i];
-        items[i] = items[j];
-        items[j] = temp;
-    }
-
-    private static boolean less(Comparable a, Comparable b) {
-        return a.compareTo(b) < 0;
-    }
-
-    private static boolean isSorted(Comparable[] items) {
-
-        if (items.length <= 1) {
-            return true;
-        }
-
-        for (int i = 1; i < items.length; i++) {
-            if (less(items[i], items[i - 1])) {
-                return false;
-            }
-        }
-
-        return true;
     }
 
     public static void main(String[] args) {
